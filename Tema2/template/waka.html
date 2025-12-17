@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waka Pod - Productos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('dashboard') }}">Home</a></li>
+            <li><a href="{{ url_for('waka') }}">Waka Pod</a></li>
+            <li><a href="{{ url_for('ignite') }}">Ignite Pod</a></li>
+            <li><a href="{{ url_for('subscribe') }}">Suscribirse</a></li>
+            <li><a href="{{ url_for('help') }}">Ayuda</a></li>
+            <li><a href="{{ url_for('logout') }}">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+    <h1>Productos Waka Pod</h1>
+    <div class="product-container">
+        <div class="product">
+            <img src="{{ url_for('static', filename='img/waka1.jpg') }}" alt="Waka Producto 1">
+            <h2>Waka 3% - Strawberry Dragon Fruit</h2>
+            <p>Precio: 85.000gs</p>
+            <p class="availability available">Disponible</p>
+        </div>
+        <div class="product">
+            <img src="{{ url_for('static', filename='img/waka2.jpg') }}" alt="Waka Producto 2">
+            <h2>WAKA SO PRO 10000 Strawberry Kiwi</h2>
+            <p>Precio: 50.000gs</p>
+            <p class="availability out-of-stock">Agotado</p>
+        </div>
+        <div class="product">
+            <img src="{{ url_for('static', filename='img/waka3.jpg') }}" alt="Waka Producto 3">
+            <h2>Kiwi Dragon Fruit Berry</h2>
+            <p>Precio: 65.000gs</p>
+            <p class="availability available">Disponible</p>
+        </div>
+    </div>
+</body>
+</html>

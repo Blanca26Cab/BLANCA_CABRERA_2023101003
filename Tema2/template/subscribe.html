@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suscribirse a Notificaciones</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('dashboard') }}">Home</a></li>
+            <li><a href="{{ url_for('waka') }}">Waka Pod</a></li>
+            <li><a href="{{ url_for('ignite') }}">Ignite Pod</a></li>
+            <li><a href="{{ url_for('subscribe') }}">Suscribirse</a></li>
+            <li><a href="{{ url_for('help') }}">Ayuda</a></li>
+            <li><a href="{{ url_for('logout') }}">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Suscríbete para Recibir Notificaciones</h1>
+        <form action="{{ url_for('subscribe') }}" method="POST">
+            <input type="text" id="name" name="name" placeholder="Nombre" required>
+            <input type="text" id="last_name" name="last_name" placeholder="Apellido" required>
+            <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
+            <input type="submit" value="Suscribirse">
+        </form>
+        {% if message %}
+            <p class="message">{{ message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

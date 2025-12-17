@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-width, initial-scale=1.0">
+    <title>Ayuda y Soporte</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('dashboard') }}">Home</a></li>
+            <li><a href="{{ url_for('waka') }}">Waka Pod</a></li>
+            <li><a href="{{ url_for('ignite') }}">Ignite Pod</a></li>
+            <li><a href="{{ url_for('subscribe') }}">Suscribirse</a></li>
+            <li><a href="{{ url_for('help') }}">Ayuda</a></li>
+            <li><a href="{{ url_for('logout') }}">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>Ayuda y Soporte</h1>
+        <p>Si tienes alguna pregunta, por favor contáctanos.</p>
+        <p>Email: soporte@elkp.com</p>
+    </div>
+</body>
+</html>

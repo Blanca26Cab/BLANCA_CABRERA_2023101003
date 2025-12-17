@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ignite - Productos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('dashboard') }}">Home</a></li>
+            <li><a href="{{ url_for('waka') }}">Waka Pod</a></li>
+            <li><a href="{{ url_for('ignite') }}">Ignite Pod</a></li>
+            <li><a href="{{ url_for('subscribe') }}">Suscribirse</a></li>
+            <li><a href="{{ url_for('help') }}">Ayuda</a></li>
+            <li><a href="{{ url_for('logout') }}">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+    <h1>Productos Ignite</h1>
+    <div class="product-container">
+        <div class="product">
+            <img src="{{ url_for('static', filename='img/ignite1.jpg') }}" alt="Producto 1">
+            <h2>POD IGNITE V150 BLUE DREAM 5% 15000PUFF RECHARGEABLE</h2>
+            <p>Precio: 105.000gs</p>
+            <p class="availability available">Disponible</p>
+        </div>
+        <div class="product">
+            <img src="{{ url_for('static', filename='img/ignite2.jpg') }}" alt="Producto 2">
+            <h2>IGNITE V80 Icy Mint</h2>
+            <p>Precio: 75.000gs</p>
+            <p class="availability out-of-stock">Agotado</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Dashboard</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('dashboard') }}">Home</a></li>
+            <li><a href="{{ url_for('waka') }}">Waka Pod</a></li>
+            <li><a href="{{ url_for('ignite') }}">Ignite Pod</a></li>
+            <li><a href="{{ url_for('subscribe') }}">Suscribirse</a></li>
+            <li><a href="{{ url_for('help') }}">Ayuda</a></li>
+            <li><a href="{{ url_for('logout') }}">Cerrar Sesión</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>EL KP Pod</h1>
+    </header>
+
+    <section id="carousel">
+        <div class="carousel-wrapper">
+            <div class="carousel-container" id="product-carousel">
+                <div class="carousel-slide">
+                    <a href="{{ url_for('ignite') }}">
+                        <img src="{{ url_for('static', filename='img/producto1.jpg') }}" alt="Producto 1">
+                    </a>
+                </div>
+                <div class="carousel-slide">
+                    <a href="{{ url_for('waka') }}">
+                        <img src="{{ url_for('static', filename='img/producto2.jpg') }}" alt="Producto 2">
+                    </a>
+                </div>
+                <div class="carousel-slide">
+                    <a href="{{ url_for('ignite') }}">
+                        <img src="{{ url_for('static', filename='img/producto3.jpg') }}" alt="Producto 3">
+                    </a>
+                </div>
+                <div class="carousel-slide">
+                    <a href="{{ url_for('waka') }}">
+                        <img src="{{ url_for('static', filename='img/producto4.jpg') }}" alt="Producto 4">
+                    </a>
+                </div>
+                <div class="carousel-slide">
+                    <a href="{{ url_for('ignite') }}">
+                        <img src="{{ url_for('static', filename='img/producto5.jpg') }}" alt="Producto 5">
+                    </a>
+                </div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
+    
+
+    <section id="brands">
+        <h2>Marcas de Pods</h2>
+        <div class="brands-container">
+            <div class="brand">
+                <a href="{{ url_for('waka') }}">
+                    <img src="{{ url_for('static', filename='img/waka.jpg') }}" alt="Waka Pod">
+                    <p>Waka Pod</p>
+                </a>
+            </div>
+            <div class="brand">
+                <a href="{{ url_for('ignite') }}">
+                    <img src="{{ url_for('static', filename='img/ignite.jpg') }}" alt="Ignite Pod">
+                    <p>Ignite Pod</p>
+                </a>
+            </div>
+            <div class="brand">
+                <a href="{{ url_for('ignite') }}">
+                    <img src="{{ url_for('static', filename='img/desechable.jpg') }}" alt="Pod Desechable">
+                    <p>Pod Desechable</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let slideIndex = 0;
+        showSlides(slideIndex);
+
+        function moveSlide(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let slides = document.getElementById("product-carousel").getElementsByClassName("carousel-slide");
+            
+            if (slides.length === 0) return;
+
+            if (n >= slides.length) {
+                slideIndex = 0;
+            } else if (n < 0) {
+                slideIndex = slides.length - 1;
+            }
+
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            
+            slides[slideIndex].style.display = "block";
+        }
+
+        function autoAdvance() {
+            moveSlide(1);
+        }
+        
+        setInterval(autoAdvance, 5000);
+    </script>
+</body>
+</html>
